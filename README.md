@@ -3,4 +3,4 @@
 ```bash
 sudo apt update
 sudo apt install nginx -y
-![SonarQube Installation](Screenshot from 2025-12-25 17-51-55.png)
+![SonarQube Installation](screenshots/Screenshot%20from%202025-12-25%2017-51-55.png)
