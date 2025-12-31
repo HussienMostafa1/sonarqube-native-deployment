@@ -123,7 +123,20 @@ psql --version
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%207.png?raw=true")
 
+viii) Switch to the Postgres user.
+```
+sudo -i -u postgres
+```
+ix) Create a database user named sonar.
 
+```
+createuser sonar
+```
+x) Log in to PostgreSQL.
+
+```
+psql
+```
 
 
 
