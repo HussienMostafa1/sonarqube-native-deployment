@@ -73,7 +73,7 @@ sudo apt update
 sudo apt install -y openjdk-17-jdk
 java -version
 ```
-![This is an alt text.]("https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202025-12-24%2018-50-37.png?raw=true")
+![This is an alt text.]("screenshot/Screenshot%20from%202025-12-24%2018-50-37.png?raw=true")
 
 
 
