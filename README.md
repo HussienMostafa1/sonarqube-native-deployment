@@ -81,7 +81,7 @@ i) Add the PostgreSQL repository.
 ```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" /etc/apt/sources.list.d/pgdg.list'
 ```
-![Add the PostgreSQL repository.](/screenshot/PostgreSQL%201.png")
+![Add the PostgreSQL repository.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%201.png?raw=true")
 
 ii) Add the PostgreSQL signing key.
 ```
@@ -94,7 +94,7 @@ iii) Install PostgreSQL.
 ```
 sudo apt install postgresql postgresql-contrib -y
 ```
-![Install PostgreSQL.](/screenshot/PostgreSQL%203.png")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%203.png?raw=true")
 
 
 
