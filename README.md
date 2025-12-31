@@ -87,7 +87,7 @@ ii) Add the PostgreSQL signing key.
 ```
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
 ```
-![Add the PostgreSQL signing key.](/screenshot/PostgreSQL%202.png")
+![Add the PostgreSQL signing key.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%202.png?raw=true")
 
 iii) Install PostgreSQL.
 
