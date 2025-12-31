@@ -1,3 +1,5 @@
+# Production-Ready SonarQube Deployment for Code Quality & Security Analysis
+
 ## 📌 Project Overview
 
 This project demonstrates a **production-ready deployment of SonarQube**
@@ -66,3 +68,8 @@ Before starting the deployment, ensure the following:
 
 ### 1️⃣Install Java (OpenJDK 17)
 i) Install OpenJDK 17 (needed for the latest version of SonarQube (version 10.0).
+```
+sudo apt update
+sudo apt install -y openjdk-17-jdk
+java -version
+```
