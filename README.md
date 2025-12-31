@@ -76,6 +76,32 @@ java -version
 ![install java.](screenshot/Screenshot%20from%202025-12-24%2018-50-37.png?raw=true")
 ![java version.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202025-12-24%2018-51-55.png?raw=true")
 
+### Install and Configure PostgreSQL
+i) Add the PostgreSQL repository.
+```
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" /etc/apt/sources.list.d/pgdg.list'
+```
+![Add the PostgreSQL repository.](/screenshot/PostgreSQL%201.png")
+
+ii) Add the PostgreSQL signing key.
+```
+wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+```
+![Add the PostgreSQL signing key.](/screenshot/PostgreSQL%202.png")
+
+iii) Install PostgreSQL.
+
+```
+sudo apt install postgresql postgresql-contrib -y
+```
+![Install PostgreSQL.](/screenshot/PostgreSQL%203.png")
+
+
+
+
+
+
+
 
 
 
