@@ -96,9 +96,32 @@ sudo apt install postgresql postgresql-contrib -y
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%203.png?raw=true")
 
+iv) Enable the database server to start automatically on reboot.
 
+```
+sudo systemctl enable postgresql
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%204.png?raw=true")
 
+v) Start the database server.
 
+```
+sudo systemctl start postgresql
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%205.png?raw=true")
+
+vi) Check the status of the database server
+
+```
+sudo systemctl status postgresql
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%206.png?raw=true")
+
+vii) Let’s check the installed version of the install Postgres DB.
+```
+psql --version
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%207.png?raw=true")
 
 
 
