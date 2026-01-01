@@ -333,11 +333,35 @@ sudo systemctl status sonar
 
 vii) Hurray, It's up and running.
 
+### Modify Kernel System Limits
+SonarQube uses Elasticsearch to store its indices in an MMap FS directory. It requires some changes to the system defaults.
 
+i) Edit the sysctl configuration file.
+```
+sudo nano /etc/sysctl.conf
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2029.png?raw=true")
 
+ii) Add the following lines.
+```
+vm.max_map_count=262144
+fs.file-max=65536
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2030.png?raw=true")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2031.png?raw=true")
 
+iii)  Edit the limits.conf configuration file.
+```
+sudo nano /etc/security/limits.conf
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2032.png?raw=true")
 
-
+ii) Add the following lines.
+```
+sonarqube - nfile  131072
+sonarqube - nproc  8192
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2034.png?raw=true")
 
 
 
