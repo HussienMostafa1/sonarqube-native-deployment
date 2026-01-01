@@ -155,13 +155,13 @@ CREATE DATABASE [database_name] OWNER [Created_user_name];
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2010.png?raw=true")
 
-xiii) Grant all the privileges on the ddsonarqube database to the sonar user.
+xiii) Grant all the privileges on the sonarqube database to the sonar user.
 ```
 GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2011.png?raw=true")
 
-xiv) Let's check the created user and the database.
+xiv) check the created user and the database.
 
 a) To check the created database
 ```
@@ -187,10 +187,33 @@ exit
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2015.png?raw=true")
 
+### Download and Install SonarQube
+i) Install the zip utility, which is needed to unzip the SonarQube files.
+```
+sudo apt install zip -y
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2016.png?raw=true")
 
+ii) Locate the latest download URL from the SonarQube official download page.
 
+Download the SonarQube distribution files. (you can download the latest SonarQube distribution using the following link)
+https://www.sonarsource.com/products/sonarqube/downloads/
+Here we are installing the latest version of SonarQube 10.0 community edition (free one)
+```
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.0.0.68432.zip
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2017.png?raw=true")
 
-
+iii) Unzip the downloaded file.
+```
+sudo unzip sonarqube-10.0.0.68432.zip
+```
+iv) Move the unzipped files to /opt/sonarqube directory
+```
+sudo mv sonarqube-10.0.0.68432 sonarqube
+```
+sudo mv sonarqube /opt/
+```
 
 
 
