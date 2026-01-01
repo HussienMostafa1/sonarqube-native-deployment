@@ -134,14 +134,14 @@ ix) Create a database user named sonar.
 ```
 createuser sonar
 ```
-![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%209.png?raw=true")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%209.1.png?raw=true")
 
 x) Log in to PostgreSQL.
 
 ```
 psql
 ```
-![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2010.png?raw=true")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%209.2.png?raw=true")
 
 
 
