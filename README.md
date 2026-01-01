@@ -66,7 +66,7 @@ Before starting the deployment, ensure the following:
 
 ## Installation & Configuration
 
-### 1️⃣Install Java (OpenJDK 17)
+### 1-Install Java (OpenJDK 17)
 i) Install OpenJDK 17 (needed for the latest version of SonarQube (version 10.0).
 ```
 sudo apt update
@@ -76,7 +76,7 @@ java -version
 ![install java.](screenshot/Screenshot%20from%202025-12-24%2018-50-37.png?raw=true")
 ![java version.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202025-12-24%2018-51-55.png?raw=true")
 
-### Install and Configure PostgreSQL
+### 2-Install and Configure PostgreSQL
 i) Add the PostgreSQL repository.
 ```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" /etc/apt/sources.list.d/pgdg.list'
@@ -187,7 +187,7 @@ exit
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2015.png?raw=true")
 
-### Download and Install SonarQube
+### 3-Download and Install SonarQube
 i) Install the zip utility, which is needed to unzip the SonarQube files.
 ```
 sudo apt install zip -y
@@ -221,7 +221,7 @@ sudo mv sonarqube /opt/
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2020.png?raw=true")
 
-### Add SonarQube Group and User
+### 4-Add SonarQube Group and User
 Create a dedicated user and group for SonarQube, which can not run as the root user.
 
 Note: You can give any name for the sonar user and group. I have here given the user and group name to be the same i.e sonar.
@@ -240,7 +240,7 @@ sudo chown sonar:sonar /opt/sonarqube -R
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2022.png?raw=true")
 
-### Configure SonarQube
+### 5-Configure SonarQube
 i) Edit the SonarQube configuration file.
 ```
 sudo nano /opt/sonarqube/conf/sonar.properties
@@ -283,7 +283,7 @@ Here, sonar is the name of the user that we have created in step number 6 (ii).
 
 b) Save and exit the file.
 
-8) Setup Systemd service
+### 6-Setup Systemd service
 i) Create a systemd service file to start SonarQube at system boot.
 ```
 sudo nano /etc/systemd/system/sonar.service
@@ -333,7 +333,7 @@ sudo systemctl status sonar
 
 vii) Hurray, It's up and running.
 
-### Modify Kernel System Limits
+### 7-Modify Kernel System Limits
 SonarQube uses Elasticsearch to store its indices in an MMap FS directory. It requires some changes to the system defaults.
 
 i) Edit the sysctl configuration file.
@@ -344,8 +344,8 @@ sudo nano /etc/sysctl.conf
 
 ii) Add the following lines.
 ```
-vm.max_map_count=262144
-fs.file-max=65536
+vm.max_map_count=524288
+fs.file-max=131072
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2030.png?raw=true")
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2031.png?raw=true")
@@ -363,12 +363,33 @@ sonarqube - nproc  8192
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2034.png?raw=true")
 
+iii) Save and exit the file.
+
+iv) Reboot the system to apply the changes.
+```
+sudo reboot
+```
+### 8-Access SonarQube Web Interface
+i) Access SonarQube in a web browser at your server’s IP address on port 9000.
+
+For example, http://IP:9000
+
+Note: the default username and password are admin and admin respectively.
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar40.png?raw=true")
+
+ii) Change the Old password with a New one.
+
+Log in with username admin and password admin. In the next step, SonarQube will prompt you to change your password. CHANGE THE PASSWORD.
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar41.png?raw=true")
+
+iii) And yes, we have successfully installed the SonarQube Community version 10.0 on AWS EC2 Ubuntu 22.
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar42.png?raw=true")
 
 
-
-
-
-
+### ###                             Congratulations, Our SonarQube has been installed successfully                                       ### ###
 
 
 
