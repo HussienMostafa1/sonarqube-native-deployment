@@ -208,14 +208,38 @@ iii) Unzip the downloaded file.
 ```
 sudo unzip sonarqube-10.0.0.68432.zip
 ```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2018.png?raw=true")
+
 iv) Move the unzipped files to /opt/sonarqube directory
 ```
 sudo mv sonarqube-10.0.0.68432 sonarqube
 ```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2019.png?raw=true")
+
 ```
 sudo mv sonarqube /opt/
 ```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2020.png?raw=true")
 
+### Add SonarQube Group and User
+Create a dedicated user and group for SonarQube, which can not run as the root user.
+
+Note: You can give any name for the sonar user and group. I have here given the user and group name to be the same i.e sonar.
+
+i) Create a sonar group.
+```
+sudo groupadd ddsonar
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2021.png?raw=true")
+
+ii) Create a sonar user and set /opt/sonarqube as the home directory.
+```
+sudo useradd -d /opt/sonarqube -g ddsonar ddsonar
+```
+iii) Grant the sonar user access to the /opt/sonarqube directory.
+```
+sudo chown ddsonar:ddsonar /opt/sonarqube -R
+```
 
 
 
