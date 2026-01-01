@@ -420,7 +420,7 @@ server {
 listen 80;
 server_name sonarqube.onecloudhelper.com;
 location / {
-proxy_pass http://127.0.0.1:9000;
+proxy_pass http://localhost:9000;
 }
 }
 ```
@@ -437,10 +437,62 @@ sudo nginx -t
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar47.png?raw=true")
 
+### 5-Enable the Nginx server.
+```
+sudo systemctl enable nginx
+```
+### 6-Restart the nginx server
+```
+sudo systemctl restart nginx
+```
+### 7-Check the status of the nginx server
+```
+sudo systemctl status nginx
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar48.png?raw=true")
+
+### 8-Use the configured domain.
+
+You can now visit http://www.sonar.com in your web browser. You’ll be greeted with the SonarQube web interface.
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar49.png?raw=true")
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar50.png?raw=true")
 
 
+###  ###     But the domain is working on HTTP protocol and we need to make it secure by making it work with the HTTPS protocol with SSL certificate.  ###  ###
 
+### 9-Installing SSL certificate for maximum security for production
 
+We will use the free SSL certificate provided by Certbot for our sub-domain www.soanar.com. Let's see how we will do this.
+
+# i) Installing certbot
+```
+sudo snap install --classic certbot
+```
+# ii) Generate SSL certificate
+```
+sudo certbot --nginx
+```
+
+Generating SSL certificate for the required domain. Please read the asked question carefully and answer them accordingly.
+Success message that the SSL certificate has been deployed on the domain www.sonar.com
+
+# iii) Certificate deployed successfully.
+
+Now if we hit the domain www.sonar.com, it automatically redirects to HTTPS.
+
+  ### Let’s recap what we have done till now. ###
+
+i) Installed and configured JDK 17 and PostgreSQL.
+
+ii) Installed and configured SonarQube.
+
+iii) Installed and configured the Nginx to run the SonarQube on a domain.
+
+iv) Installed the SSL certificate on the Subdomain for production.
+
+v) And finally made it work.
 
 
 
