@@ -232,11 +232,11 @@ sudo groupadd ddsonar
 ```
 ii) Create a sonar user and set /opt/sonarqube as the home directory.
 ```
-sudo useradd -d /opt/sonarqube -g ddsonar ddsonar
+sudo useradd -d /opt/sonarqube -g sonar sonar
 ```
 iii) Grant the sonar user access to the /opt/sonarqube directory.
 ```
-sudo chown ddsonar:ddsonar /opt/sonarqube -R
+sudo chown sonar:sonar /opt/sonarqube -R
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2022.png?raw=true")
 
@@ -255,14 +255,85 @@ b) Uncomment the lines, and add the database user and Database password you crea
 
 sonar.jdbc.username=sonar
 
-sonar.jdbc.password=your_passowrd
+sonar.jdbc.password=your_password
 
 c) Below these two lines, add the following line of code.
 
 sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
+
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2023.png?raw=true")
 
 Here, sonarqube is the database name created.
+
+d) Save and exit the file.
+
+ii) Edit the sonar script file.
+```
+sudo nano /opt/sonarqube/bin/linux-x86-64/sonar.sh
+```
+a) Add the following line
+
+RUN_AS_USER=sonar
+
+Here, sonar is the name of the user that we have created in step number 6 (ii).
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2024.png?raw=true")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2026.png?raw=true")
+
+
+b) Save and exit the file.
+
+8) Setup Systemd service
+i) Create a systemd service file to start SonarQube at system boot.
+```
+sudo nano /etc/systemd/system/sonar.service
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2027.png?raw=true")
+
+ii) Paste the following lines to the file.
+```
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+[Service]
+Type=forking
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+User=sonar
+Group=sonar
+Restart=always
+LimitNOFILE=65536
+LimitNPROC=4096
+[Install]
+WantedBy=multi-user.target
+```
+Note: Here in the above script, make sure to change the User and Group section with the value that you have created. For me its:
+
+User=sonar
+
+Group=sonar
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2028.1.png?raw=true")
+
+iii) Save and exit the file.
+
+iv) Enable the SonarQube service to run at system startup.
+```
+sudo systemctl enable sonar
+```
+v) Start the SonarQube service.
+```
+sudo systemctl start sonar
+```
+vi) Check the service status.
+```
+sudo systemctl status sonar
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2028.png?raw=true")
+
+vii) Hurray, It's up and running.
+
+
 
 
 
