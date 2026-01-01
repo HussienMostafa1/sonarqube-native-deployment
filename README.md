@@ -240,6 +240,30 @@ sudo chown ddsonar:ddsonar /opt/sonarqube -R
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2022.png?raw=true")
 
+### Configure SonarQube
+i) Edit the SonarQube configuration file.
+```
+sudo nano /opt/sonarqube/conf/sonar.properties
+```
+a) Find the following lines:
+
+#sonar.jdbc.username=
+
+#sonar.jdbc.password=
+
+b) Uncomment the lines, and add the database user and Database password you created in Step 4 (xi and xii). For me, it’s:
+
+sonar.jdbc.username=sonar
+
+sonar.jdbc.password=your_passowrd
+
+c) Below these two lines, add the following line of code.
+
+sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2023.png?raw=true")
+
+Here, sonarqube is the database name created.
+
 
 
 
