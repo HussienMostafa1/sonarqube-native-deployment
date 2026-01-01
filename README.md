@@ -208,7 +208,7 @@ iii) Unzip the downloaded file.
 ```
 sudo unzip sonarqube-10.0.0.68432.zip
 ```
-![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2018.png?raw=true")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2021.png?raw=true")
 
 iv) Move the unzipped files to /opt/sonarqube directory
 ```
@@ -230,8 +230,6 @@ i) Create a sonar group.
 ```
 sudo groupadd ddsonar
 ```
-![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2021.png?raw=true")
-
 ii) Create a sonar user and set /opt/sonarqube as the home directory.
 ```
 sudo useradd -d /opt/sonarqube -g ddsonar ddsonar
@@ -240,6 +238,7 @@ iii) Grant the sonar user access to the /opt/sonarqube directory.
 ```
 sudo chown ddsonar:ddsonar /opt/sonarqube -R
 ```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2022.png?raw=true")
 
 
 
