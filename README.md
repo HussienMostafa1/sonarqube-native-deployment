@@ -143,6 +143,79 @@ psql
 ```
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%209.2.png?raw=true")
 
+xi) Set a password for the sonar user. Use a strong password in place of my_strong_password.
+```
+ALTER USER [Created_user_name] WITH ENCRYPTED password 'my_strong_password';
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%209.png?raw=true")
+
+xii) Create a SonarQube database and set the owner to sonar.
+```
+CREATE DATABASE [database_name] OWNER [Created_user_name];
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2010.png?raw=true")
+
+xiii) Grant all the privileges on the ddsonarqube database to the sonar user.
+```
+GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2011.png?raw=true")
+
+xiv) Let's check the created user and the database.
+
+a) To check the created database
+```
+\l
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2012.png?raw=true")
+
+b) To check the created database user
+```
+\du
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2013.png?raw=true")
+
+xv) Exit PostgreSQL.
+```
+\q
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2014.png?raw=true")
+
+xvi) Return to your non-root sudo user account.
+```
+exit
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/PostgreSQL%2015.png?raw=true")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
