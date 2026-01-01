@@ -25,7 +25,7 @@ before applications are promoted to production.
 - **Java Runtime:** OpenJDK 17
 - **Database:** PostgreSQL
 - **Reverse Proxy:** Nginx
-- - **Deployment Type:** Native (Non-containerized)
+- **Deployment Type:** Native (Non-containerized)
 - **Target Environment:** Production & Pre-Production
 - **Security Focus:**
   - Code Quality Analysis
@@ -392,6 +392,50 @@ iii) And yes, we have successfully installed the SonarQube Community version 10.
 ### ###                             Congratulations, Our SonarQube has been installed successfully                                       ### ###
 
 
+
+
+
+###   ###                           Configuring the Reverse Proxy using Nginx                                                           ### ###
+
+Now we want a domain name to take over the IP of the server so that instead of hitting the IP we can use the domain name that is TLS enabled. Let's see how to do so.
+
+I will be using the sub-domain name www.sonar.com This is mine. Please use yours.
+
+### 1-Install Nginx
+```
+sudo apt updat
+sudo apt install nginx -y
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar43.png?raw=true")
+
+### 2-Create a new Nginx configuration file for the site.
+```
+sudo nano /etc/nginx/sites-enabled/sonarqube
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar44.png?raw=true")
+
+### 3-Add this configuration so that Nginx will route incoming traffic to SonarQube.
+```
+server {
+listen 80;
+server_name sonarqube.onecloudhelper.com;
+location / {
+proxy_pass http://127.0.0.1:9000;
+}
+}
+```
+Here, replace the part server_name www.sonar.com; with your domain or sub-domain name.
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar45.png?raw=true")
+```
+sudo ln -s /etc/nginx/sites-available/sonarqube /etc/sites-enabled/
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar46.png?raw=true")
+
+### 4-Next, make sure your configuration file has no syntax errors.
+```
+sudo nginx -t
+```
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar47.png?raw=true")
 
 
 
