@@ -212,6 +212,7 @@ iv) Move the unzipped files to /opt/sonarqube directory
 ```
 sudo mv sonarqube-10.0.0.68432 sonarqube
 ```
+```
 sudo mv sonarqube /opt/
 ```
 
