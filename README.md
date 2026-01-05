@@ -483,7 +483,7 @@ Success message that the SSL certificate has been deployed on the domain www.son
 Now if we hit the domain www.sonar.com, it automatically redirects to HTTPS.
 
 ### This project demonstrates how SonarQube detects
-security issues, code smells, and bugs in a Node.js application.
+security issues, code smells, and bugs in an any programing language  application.
 
 The application intentionally includes insecure patterns
 to validate static code analysis capabilities.
