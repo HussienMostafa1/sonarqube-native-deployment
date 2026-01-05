@@ -482,6 +482,17 @@ Success message that the SSL certificate has been deployed on the domain www.son
 
 Now if we hit the domain www.sonar.com, it automatically redirects to HTTPS.
 
+### This project demonstrates how SonarQube detects
+security issues, code smells, and bugs in a Node.js application.
+
+The application intentionally includes insecure patterns
+to validate static code analysis capabilities.
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2019-39-51.png?raw=true")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2019-40-07.png?raw=true")
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2019-40-20.png?raw=true")
+
+
   ### Let’s recap what we have done till now. ###
 
 i) Installed and configured JDK 17 and PostgreSQL.
