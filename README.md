@@ -50,15 +50,17 @@ This architecture enables:
 - Quality gates before production
 - Designed for CI/CD integration
 - Shift-left security model
-https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar49.png?raw=true
 ---
-
 ## 📸 Screenshots
-![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2019-39-51.png?raw=true")
-![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2019-40-07.png?raw=true")
-![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2019-40-20.png?raw=true")
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar49.png?raw=true")
+
 ![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/sonar50.png?raw=true")
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2022-35-12.png?raw=true")
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2022-35-20.png?raw=true")
+
+![Install PostgreSQL.](https://github.com/HussienMostafa1/sonarqube-native-deployment/blob/main/screenshot/Screenshot%20from%202026-01-05%2022-35-36.png?raw=true")
 
 ---
 
