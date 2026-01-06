@@ -67,6 +67,10 @@ This architecture enables:
 ## 📄 Installation
 Full installation steps can be found in [INSTALLATION.md](INSTALLATION.md)
 
+🔐 Nginx Reverse Proxy & SSL
+Detailed Nginx setup and HTTPS configuration steps are in:
+[docs/nginx-setup.md](docs/nginx-setup.md)
+
 ---
 
 ## 🔮 Future Improvements
